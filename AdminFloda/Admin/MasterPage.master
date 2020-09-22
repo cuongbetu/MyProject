@@ -1,0 +1,53 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="Admin_MasterPage" %>
+
+<%@ Register Src="~/Admin/UserControl/ucCss.ascx" TagPrefix="uc1" TagName="ucCss" %>
+<%@ Register Src="~/Admin/UserControl/ucScript.ascx" TagPrefix="uc1" TagName="ucScript" %>
+<%@ Register Src="~/Admin/UserControl/ucHeader.ascx" TagPrefix="uc1" TagName="ucHeader" %>
+<%@ Register Src="~/Admin/UserControl/ucAdminInfo.ascx" TagPrefix="uc1" TagName="ucAdminInfo" %>
+<%@ Register Src="~/Admin/UserControl/ucMenu.ascx" TagPrefix="uc1" TagName="ucMenu" %>
+<%@ Register Src="~/Admin/UserControl/ucBreadcrumb.ascx" TagPrefix="uc1" TagName="ucBreadcrumb" %>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <uc1:ucCss runat="server" id="ucCss" />
+
+    <uc1:ucScript runat="server" id="ucScript" />
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="wrapper">
+
+            <uc1:ucHeader runat="server" id="ucHeader" />
+
+
+            <div class="menu">
+                <uc1:ucAdminInfo runat="server" id="ucAdminInfo" />
+
+
+                <uc1:ucMenu runat="server" id="ucMenu" />
+
+            </div>
+
+            <div class="content">
+
+                <uc1:ucBreadcrumb runat="server" id="ucBreadcrumb" />
+                <asp:ContentPlaceHolder ID="content" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+      <asp:ContentPlaceHolder ID="foot" runat="server">
+      </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>
